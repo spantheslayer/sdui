@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import generateImage from "../sd";
+import ClipLoader from "react-spinners/ClipLoader";
+import { css } from "@emotion/react";
 
 interface FormData {
   ethnicity: string;
@@ -467,7 +469,7 @@ export default function Form(): JSX.Element {
           )}
         </div>
       </form>
-      {loading && <div>Loading...</div>}
+      <ClipLoader loading={loading} size={35} color={"#123abc"} />
       {imageData && !loading && (
         <div>
           <h2>Generated Image:</h2>
